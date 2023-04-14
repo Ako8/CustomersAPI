@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}CRUD - Customer{% endblock %}
+
+{% block content %}
+<h1>Customer ID: {{ customer[0] }}</h1>
+<div>
+	<form action="/customers/update/{{ customer[0] }}" method="post">
+		<p><input type="text" name=name value="{{ customer[1] }}"></p>
+		<p><input type="text" name=items value="{{ customer[2] }}"></p>
+		<p><input type="number" name=price value="{{ customer[3] }}"></p>
+		<p><input type="submit" name="upd" value="Update"></p>
+	</form>
+	<form action="/customers/delete/{{ customer[0] }}" method="post">
+		<p><input type="submit" name="del" value="Delete"></p>
+	</form>
+<div>
+	<a href="/customers"><input type="submit" value="Go back"></a>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}CRUD - Add Customer{% endblock %}
+
+
+{% block content %}
+	<form action="/customers/add" method="post">
+		<p>Name: <input type="text" name="name"></p>
+		<p>Items: <input type="text" name="items"></p>
+		<p>Price: <input type="number" name="price"></p>
+		<p><input type="submit" value="Add Customer"></p>
+	</form>
+	<a href="/customers"><input type="submit" value="Go back"></a>
+{% endblock %}

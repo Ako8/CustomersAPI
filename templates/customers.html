@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}CRUD - Search Customers{% endblock %}
+
+{% block content %}
+	<a href="/customers/addnew"><input type="submit" value="Add New Customer"></a>
+	<form action="#" method="post">
+		<p>Find By ID: <input type="number" name="nm" /><input type="submit" value="Search"></p>
+	</form>
+	{% for cus in customers %}
+	<hr width="400px" align="left">
+	<form action="/customers/delete/{{ cus.id }}" method="post">
+		<p>ID:{{ cus.id }}<a href="/customers/{{ cus.id }}"> {{ cus.name }}</a></p>
+		<input type="submit" name="del" value="Delete">
+	</form></a>
+	{% endfor %}
+{% endblock %}
